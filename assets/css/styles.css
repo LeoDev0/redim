@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f3f0ec;
+}
+
+img {
+  max-width: 100%;
+  /* width: 100%; */
+  /* max-width: 1150px; */
+}
+
+h2 {
+  margin: 20px 0 70px 0;
+}
+
+/* Espaçamento abaixo das colunas dos inputs de largura e altura e do botão "Redimensionar" para visualização em celulares */
+.row > * {
+  margin-bottom: 24px;
+  /* margin-bottom: 42px; */
+}
