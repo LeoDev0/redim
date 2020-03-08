@@ -6,32 +6,37 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/styles.css">
-  <title>Redimensionador de imagens</title>
+  <title>RedIm: single page image resizer</title>
 </head>
 <body>
 
-  <div style="margin-top:30px; margin-bottom: 30px;" class="container">
+  <div class="container shadow">
 
-    <h2 class="text-center">Redimensionador de Imagens</h2>
+    <!-- <h2 class="text-center">RedIm</h2>
+    <h5 class="text-center">single page image resizer</h5> -->
+    <div style="margin-bottom:20px;" class="d-flex justify-content-center">
+      <img width="180" height="180" src="assets/images/logo.png" alt="logo">
+    </div>
 
     <form method="post" enctype="multipart/form-data">
       <div class="form-group">
 
-        <div class="mb-42 input-group">
+        <div class="mb-42 input-group shadow-sm">
           <div class="input-group-prepend">
             <span class="input-group-text" id="inputGroupFileAddon01"><strong>Upload</strong></span>
           </div>
           <div class="custom-file">
             <input class="custom-file-input" id="browse" type="file" name="imagem" accept=".png, .jpg, .jpeg" aria-describedby="inputGroupFileAddon01">
-            <label class="custom-file-label" for="browse">Escolha a imagem</label>
+            <label id="preview" class="custom-file-label" for="browse">Escolha a imagem</label>
           </div>
         </div>
 
-        <div id="preview"></div><br>
+        <!-- <div id="preview"></div><br> -->
+        <br>
         <div class="row">
 
           <div class="col-lg-4">
-            <div class="input-group">
+            <div class="input-group shadow-sm">
               <div class="input-group-prepend">
                 <span class="input-group-text"><strong>Largura:</strong></span>
               </div>
@@ -43,7 +48,7 @@
           </div>
 
           <div class="col-lg-4">
-            <div class="input-group">
+            <div class="input-group shadow-sm">
               <div class="input-group-prepend">
                 <span class="input-group-text"><strong>Altura:</strong></span>
               </div>
@@ -55,12 +60,11 @@
           </div>
 
           <div class="col-lg-4 d-flex justify-content-center">
-            <button class="btn-lg btn-primary btn-block">Redimensionar</button>
+            <button class="btn-lg btn-primary btn-block shadow">Redimensionar</button>
           </div>
 
         </div>
         <br>
-        <!-- <button class="btn-lg btn-primary">Redimensionar</button> -->
 
       </div>
     </form>
@@ -106,8 +110,8 @@
             imagejpeg($imagemFinal, null, 100);
             $imagedata = ob_get_clean();
             echo '<center>';
-              echo '<img src="data:image/jpeg;base64,'.base64_encode($imagedata).'"/><br>';
-              echo '<a style="margin-bottom:40px; text-decoration:none;" class="btn-lg btn-success" href="data:image/jpeg;base64,'.base64_encode($imagedata).'" download>Download image</a>';
+              echo '<img class="resized-image" src="data:image/jpeg;base64,'.base64_encode($imagedata).'"/><br>';
+              echo '<a class="btn-lg btn-success download-btn" href="data:image/jpeg;base64,'.base64_encode($imagedata).'" download>Download image</a>';
             echo '</center>';
 
           } else {
@@ -121,10 +125,9 @@
             ob_start();
             imagepng($imagemFinal, null);
             $imagedata = ob_get_clean();
-            // echo '<div class="container">';
             echo '<center>';
-              echo '<img src="data:image/png;base64,'.base64_encode($imagedata).'"/><br>';
-              echo '<a style="margin-bottom: 40px; text-decoration:none;" class="btn-lg btn-success" href="data:image/png;base64,'.base64_encode($imagedata).'" download>Download image</a>';
+              echo '<img class="resized-image" src="data:image/png;base64,'.base64_encode($imagedata).'"/><br>';
+              echo '<a class="btn-lg btn-success download-btn" href="data:image/png;base64,'.base64_encode($imagedata).'" download>Download image</a>';
             echo '</center>';
           }
           
@@ -132,7 +135,7 @@
 
       } else {
         echo '<script language="javascript">';
-        echo 'alert("Só são aceitos arquivos JPG e PNG")';
+        echo 'alert("Selecione um arquivo JPG ou PNG.")';
         echo '</script>';
       }
     }

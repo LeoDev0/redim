@@ -3,17 +3,26 @@
 }
 
 body {
-  background-color: #f3f0ec;
+  margin-top: 15px;
+  margin-bottom: 30px;
 }
 
-img {
-  max-width: 100%;
-  /* width: 100%; */
-  /* max-width: 1150px; */
+.container {
+  background-color: #f3f0ec;
+  border-radius: 10px;
 }
 
 h2 {
   margin: 20px 0 70px 0;
+}
+
+.resized-image {
+  max-width: 100%;
+}
+
+.download-btn {
+  margin-bottom: 40px;
+  text-decoration: none !important;
 }
 
 /* Espaçamento abaixo das colunas dos inputs de largura e altura e do botão "Redimensionar" para visualização em celulares */
