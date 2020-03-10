@@ -12,10 +12,6 @@ body {
   border-radius: 10px;
 }
 
-h2 {
-  margin: 20px 0 70px 0;
-}
-
 .resized-image {
   max-width: 100%;
 }
