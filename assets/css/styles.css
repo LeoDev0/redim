@@ -26,3 +26,10 @@ body {
   margin-bottom: 24px;
   /* margin-bottom: 42px; */
 }
+
+.download-icon {
+  width: 17px;
+  /* margin-bottom: 5px;
+  margin-right: 8px; */
+  margin: 0 8px 5px 0;
+}

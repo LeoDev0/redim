@@ -130,7 +130,7 @@
             $imagedata = ob_get_clean();
             echo '<center>';
               echo '<img class="resized-image" src="data:image/jpeg;base64,'.base64_encode($imagedata).'"/><br>';
-              echo '<a class="btn-lg btn-warning download-btn" href="data:image/jpeg;base64,'.base64_encode($imagedata).'" download>Baixar imagem</a>';
+              echo '<a class="btn-lg btn-warning download-btn" href="data:image/jpeg;base64,'.base64_encode($imagedata).'" download><img class="download-icon" src="assets/images/download.png">Download</a>';
             echo '</center>';
 
           } else {
@@ -146,7 +146,7 @@
             $imagedata = ob_get_clean();
             echo '<center>';
               echo '<img class="resized-image" src="data:image/png;base64,'.base64_encode($imagedata).'"/><br>';
-              echo '<a class="btn-lg btn-warning download-btn" href="data:image/png;base64,'.base64_encode($imagedata).'" download>Baixar imagem</a>';
+              echo '<a class="btn-lg btn-warning download-btn" href="data:image/png;base64,'.base64_encode($imagedata).'" download><img class="download-icon" src="assets/images/download.png">Download</a>';
             echo '</center>';
           }   
         }
