@@ -40,23 +40,57 @@ EL_browse.addEventListener("change", ev => {
 
 // Atualização dinâmica dos valores de largura, altura e porcentagem
 // baseados na proporção original da imagem
-widthInput.onkeyup = () => {
+
+// widthInput.onchange = () => {
+//   newHeightValue = widthInput.value / ratio;
+//   heightInput.value = newHeightValue.toFixed();
+//   percentageInput.value = ((widthInput.value * 100) / originalWidth).toFixed();
+// };
+
+// heightInput.onchange = () => {
+//   newWidthValue = heightInput.value * ratio;
+//   widthInput.value = newWidthValue.toFixed();
+//   percentageInput.value = ((widthInput.value * 100) / originalWidth).toFixed();
+// };
+
+// percentageInput.onchange = () => {
+//   widthInput.value = (originalWidth * (percentageInput.value / 100)).toFixed();
+//   newHeightValue = widthInput.value / ratio;
+//   heightInput.value = newHeightValue.toFixed();
+// };
+
+function handleWidthChange() {
   newHeightValue = widthInput.value / ratio;
   heightInput.value = newHeightValue.toFixed();
   percentageInput.value = ((widthInput.value * 100) / originalWidth).toFixed();
-};
+}
 
-heightInput.onkeyup = () => {
+function handleHeightChange() {
   newWidthValue = heightInput.value * ratio;
   widthInput.value = newWidthValue.toFixed();
   percentageInput.value = ((widthInput.value * 100) / originalWidth).toFixed();
-};
+}
 
-percentageInput.onkeyup = () => {
+function handlePercentageChange() {
   widthInput.value = (originalWidth * (percentageInput.value / 100)).toFixed();
   newHeightValue = widthInput.value / ratio;
   heightInput.value = newHeightValue.toFixed();
-};
+}
+
+widthInput.addEventListener("keyup", handleWidthChange);
+widthInput.addEventListener("change", handleWidthChange);
+
+heightInput.addEventListener("keyup", handleHeightChange);
+heightInput.addEventListener("change", handleHeightChange);
+
+percentageInput.addEventListener("keyup", handlePercentageChange);
+percentageInput.addEventListener("change", handlePercentageChange);
+
+// Outra opção ao que foi feito acima seria colocar os eventos dentro
+// de uma array e repetir eles dentro de um forEach
+// ["click", "change"].forEach(event => {
+//   widthInput.addEventListener(event, handleWidthChange);
+// });
 
 // jquery usado para renderizar os tooltips do bootstrap
 $(function() {
