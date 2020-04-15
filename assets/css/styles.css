@@ -33,3 +33,13 @@ body {
   margin-right: 8px; */
   margin: 0 8px 5px 0;
 }
+
+footer {
+  margin-top: 30px;
+}
+
+.signature {
+  font-size: 13px;
+  color: #675e5a;
+  font-weight: 800;
+}
