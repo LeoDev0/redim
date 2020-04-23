@@ -11,6 +11,10 @@
 </head>
 <body>
 
+  <div id="loader-container">
+    <div id="loader"></div>
+  </div>
+
   <div class="container shadow">
 
     <div style="margin-bottom:20px;" class="text-center">
@@ -179,14 +183,6 @@
     <a class="signature" target="_blank" rel="noopener" href="https://github.com/LeoDev0/redimensionador-de-imagens">Designed and Built with <span style="color:red;">❤️</span> By Leo Fernandes</a>
   </footer>
   
-  <!-- Page load progress bar -->
-  <!-- <script type="module">
-    import PageLoad from "//unpkg.com/@manz/pageload";
-    PageLoad.start({
-      color: "#ffc107",
-      spinBarColor: "#ffc107",
-    });
-  </script> -->
   <script type="text/javascript" src="assets/js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="assets/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/script.js"></script>

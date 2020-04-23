@@ -4,7 +4,7 @@ const widthInput = document.querySelector("input[name='width']");
 const heightInput = document.querySelector("input[name='height']");
 const percentageInput = document.getElementById("percentage");
 
-const readImage = file => {
+const readImage = (file) => {
   if (!/^image\/(png|jpe?g)$/.test(file.type))
     return EL_preview.insertAdjacentHTML(
       "beforeend",
@@ -31,7 +31,7 @@ const readImage = file => {
   img.src = window.URL.createObjectURL(file);
 };
 
-EL_browse.addEventListener("change", ev => {
+EL_browse.addEventListener("change", (ev) => {
   EL_preview.innerHTML = "";
   const files = ev.target.files;
   if (!files || !files[0]) return alert("Arquivo não suportado.");
@@ -40,25 +40,6 @@ EL_browse.addEventListener("change", ev => {
 
 // Atualização dinâmica dos valores de largura, altura e porcentagem
 // baseados na proporção original da imagem
-
-// widthInput.onchange = () => {
-//   newHeightValue = widthInput.value / ratio;
-//   heightInput.value = newHeightValue.toFixed();
-//   percentageInput.value = ((widthInput.value * 100) / originalWidth).toFixed();
-// };
-
-// heightInput.onchange = () => {
-//   newWidthValue = heightInput.value * ratio;
-//   widthInput.value = newWidthValue.toFixed();
-//   percentageInput.value = ((widthInput.value * 100) / originalWidth).toFixed();
-// };
-
-// percentageInput.onchange = () => {
-//   widthInput.value = (originalWidth * (percentageInput.value / 100)).toFixed();
-//   newHeightValue = widthInput.value / ratio;
-//   heightInput.value = newHeightValue.toFixed();
-// };
-
 function handleWidthChange() {
   newHeightValue = widthInput.value / ratio;
   heightInput.value = newHeightValue.toFixed();
@@ -93,6 +74,16 @@ percentageInput.addEventListener("change", handlePercentageChange);
 // });
 
 // jquery usado para renderizar os tooltips do bootstrap
-$(function() {
+$(function () {
   $('[data-toggle="tooltip"]').tooltip();
 });
+
+// Loading animation
+const bodyElem = document.querySelector("body");
+const loaderContainerElem = document.getElementById("loader-container");
+const containerElem = document.querySelector(".container");
+
+bodyElem.onload = () => {
+  loaderContainerElem.parentNode.removeChild(loaderContainerElem);
+  containerElem.style.display = "block";
+};
