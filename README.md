@@ -7,7 +7,7 @@ Redimensionador de imagens (JPEG e PNG) simples e rápido, tudo em uma só pági
 <ol>
   <li>Escolha a imagem no seu computador que deseja redimensionar;</li>
   <li>Escolha os novos valores de altura/largura ou porcentagem em relação ao tamanho original da imagem;</li>
-  <li>Ao clicar no botão "Redimensionar" as alterações serão feitas, a imagem redimensionada e você pode baixá-la.<li>
+  <li>Ao clicar no botão "Redimensionar" as alterações serão feitas, a será imagem redimensionada e você poderá baixá-la.</li>
 </ol>
 
 ## Features futuras
