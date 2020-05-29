@@ -15,4 +15,4 @@ Redimensionador de imagens (JPEG e PNG) simples e rápido, tudo em uma só pági
 - [x] Redimensionamento por porcentagem.
 - [ ] Suporte a redimensionamento de GIFs.
 
-<img src="assets/images/show.jpg">
+![project-image](assets/images/show.jpg)
